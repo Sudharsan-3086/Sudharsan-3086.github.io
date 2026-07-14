@@ -58,24 +58,16 @@
                 <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-cyan-500 rounded-2xl transform rotate-3 scale-105 opacity-20 blur"></div>
                 
                 <div class="relative bg-gray-950 rounded-2xl border-2 border-gray-800 shadow-2xl overflow-hidden aspect-video md:aspect-[4/5] lg:h-96">
-                    <!-- Video Element with full opacity, loop, and auto-play attributes -->
-                    <!-- Note: Browsers block unmuted autoplay. If audio doesn't start instantly, user clicks play/controls below. -->
-                    <video id="introVideo" loop playsinline class="w-full h-full object-cover opacity-100">
+                    <!-- Video Element with Autoplay Enabled -->
+                    <video id="introVideo" autoplay loop muted playsinline class="w-full h-full object-cover opacity-100">
                         <source src="intro.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
 
-                    <!-- Interactive Play Overlay Button -->
-                    <div id="videoOverlay" class="absolute inset-0 bg-gray-950/60 flex flex-col items-center justify-center cursor-pointer transition hover:bg-gray-950/40 group z-30">
-                        <button class="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-gray-950 text-xl font-bold shadow-lg transition transform group-hover:scale-110">
-                            <i id="playIcon" class="fa-solid fa-play ml-1"></i>
-                        </button>
-                        <span class="text-xs text-teal-400 mt-2 font-medium uppercase tracking-wider">Click to Play with Audio</span>
-                    </div>
-
-                    <!-- Audio Status Indicator Badge -->
-                    <div class="absolute top-3 right-3 bg-gray-900/80 backdrop-blur border border-gray-700 px-2 py-1 rounded text-[10px] font-mono tracking-wider flex items-center gap-1.5 z-20">
-                        <i class="fa-solid fa-volume-high text-teal-400"></i> Audio Enabled
+                    <!-- Interactive Unmute Control Overlay Layer -->
+                    <div id="videoOverlay" class="absolute bottom-4 right-4 bg-gray-950/80 backdrop-blur border border-teal-500/30 px-3 py-2 rounded-lg flex items-center gap-2 cursor-pointer transition hover:bg-teal-500 hover:text-gray-950 text-teal-400 group z-30 shadow-xl">
+                        <i id="audioIcon" class="fa-solid fa-volume-xmark transition-transform group-hover:scale-110"></i>
+                        <span id="audioText" class="text-xs font-mono tracking-wider font-bold uppercase">Tap to Unmute</span>
                     </div>
                 </div>
             </div>
@@ -85,12 +77,12 @@
     <!-- Skills Section -->
     <section id="skills" class="py-20 border-t border-gray-800 bg-gray-950/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Core Technical Toolkit[cite: 2]</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Core Technical Toolkit</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- AI / ML -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-teal-500/30 transition">
                     <div class="text-teal-400 text-2xl mb-4"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="text-xl font-bold mb-3">AI & Machine Learning[cite: 2]</h3>
+                    <h3 class="text-xl font-bold mb-3">AI & Machine Learning</h3>
                     <p class="text-xs text-gray-400 mb-4 font-mono">Generative AI, Deep Learning, NLP, Time Series, Scikit-Learn[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
                         <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Generative AI & Prompt Engineering[cite: 2]</li>
@@ -101,7 +93,7 @@
                 <!-- Cybersecurity -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-cyan-400/30 transition">
                     <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Cybersecurity[cite: 2]</h3>
+                    <h3 class="text-xl font-bold mb-3">Cybersecurity</h3>
                     <p class="text-xs text-gray-400 mb-4 font-mono">NIST Framework, Threat Modeling, SIEM, Cryptography[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
                         <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Cyber Threat Intelligence & IPS[cite: 2]</li>
@@ -112,7 +104,7 @@
                 <!-- MLOps & Systems -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-purple-500/30 transition">
                     <div class="text-purple-400 text-2xl mb-4"><i class="fa-solid fa-gears"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Data & MLOps Pipelines[cite: 2]</h3>
+                    <h3 class="text-xl font-bold mb-3">Data & MLOps Pipelines</h3>
                     <p class="text-xs text-gray-400 mb-4 font-mono">Python, SQL, Flask, Streamlit, CI/CD, Docker[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
                         <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Streamlit & Flask App Infrastructure[cite: 2]</li>
@@ -286,18 +278,32 @@
     <script>
         const video = document.getElementById('introVideo');
         const overlay = document.getElementById('videoOverlay');
-        const playIcon = document.getElementById('playIcon');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
 
-        overlay.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-            }
+        // Force playback natively immediately on initial DOM initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            video.play().catch(error => {
+                console.log("Autoplay forced execution caught:", error);
+            });
         });
 
-        video.addEventListener('click', () => {
-            video.pause();
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                audioIcon.classList.remove('fa-volume-xmark');
+                audioIcon.classList.add('fa-volume-high');
+                audioText.innerText = "Mute Audio";
+                overlay.classList.remove('text-teal-400', 'border-teal-500/30');
+                overlay.classList.add('text-white', 'bg-teal-600', 'border-teal-400');
+            } else {
+                video.muted = true;
+                audioIcon.classList.remove('fa-volume-high');
+                audioIcon.classList.add('fa-volume-xmark');
+                audioText.innerText = "Tap to Unmute";
+                overlay.classList.remove('text-white', 'bg-teal-600', 'border-teal-400');
+                overlay.classList.add('text-teal-400', 'bg-gray-950/80', 'border-teal-500/30');
+            }
         });
     </script>
 
