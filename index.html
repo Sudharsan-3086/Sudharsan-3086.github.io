@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudharsan Ravi | AI/ML & Cybersecurity Engineer</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased scroll-smooth">
 
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="text-xl font-bold tracking-wider text-teal-400">SUDHARSAN RAVI</span>
@@ -22,80 +25,111 @@
         </div>
     </nav>
 
-    <section id="about" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <video autoplay loop muted playsinline class="absolute z-0 min-w-full min-h-full object-cover">
-            <source src="intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="absolute inset-0 bg-gray-950/80 z-10"></div>
-
-        <div class="relative z-20 max-w-4xl mx-auto px-6 text-center space-y-6">
-            <div class="inline-block px-3 py-1 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold uppercase tracking-wider rounded-full">
-                Available for Master's Programs & Roles
+    <!-- Hero Section with Corner Video Presentation -->
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            <!-- Left Side: Introduction Text -->
+            <div class="flex-1 space-y-6">
+                <div class="inline-block px-3 py-1 bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold uppercase tracking-wider rounded-full">
+                    Available for Master's Programs & Roles
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                    Hi, I'm <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Sudharsan Ravi</span>
+                </h1>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    An AI/ML and Cybersecurity Engineer specializing in building secure, intelligent systems[cite: 2]. I focus on developing scalable machine learning models and safeguarding them with robust enterprise frameworks like NIST to protect intelligent systems from critical threats[cite: 2]. 
+                </p>
+                <!-- Social/Contact Links -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="mailto:sudharsan3086@gmail.com" class="px-5 py-2.5 bg-teal-500 hover:bg-teal-600 text-gray-950 font-bold rounded-lg transition text-sm shadow-lg shadow-teal-500/20">
+                        <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+                    </a>
+                    <a href="https://github.com/Sudharsan-3086" target="_blank" class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg border border-gray-700 transition text-sm">
+                        <i class="fa-brands fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/sudharsan-ravi" target="_blank" class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg border border-gray-700 transition text-sm">
+                        <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                </div>
             </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
-                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Sudharsan Ravi</span>
-            </h1>
-            <p class="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-                An AI/ML and Cybersecurity Engineer specializing in building secure, intelligent systems. I focus on developing scalable machine learning models and safeguarding them with robust enterprise frameworks like NIST to protect intelligent systems from critical threats.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="mailto:sudharsan3086@gmail.com" class="px-6 py-3 bg-teal-500 hover:bg-teal-600 text-gray-950 font-bold rounded-lg transition text-sm shadow-lg shadow-teal-500/20">
-                    <i class="fa-solid fa-envelope mr-2"></i> Contact Me
-                </a>
-                <a href="https://github.com/Sudharsan-3086" target="_blank" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg border border-gray-700 transition text-sm">
-                    <i class="fa-brands fa-github mr-2"></i> GitHub
-                </a>
-                <a href="https://linkedin.com/in/sudharsan-ravi" target="_blank" class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg border border-gray-700 transition text-sm">
-                    <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
-                </a>
+
+            <!-- Right Side: Corner Video Player Container -->
+            <div class="flex-shrink-0 relative w-full md:w-80">
+                <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-cyan-500 rounded-2xl transform rotate-3 scale-105 opacity-20 blur"></div>
+                
+                <div class="relative bg-gray-950 rounded-2xl border-2 border-gray-800 shadow-2xl overflow-hidden aspect-video md:aspect-[4/5] lg:h-96">
+                    <!-- Video Element with full opacity, loop, and auto-play attributes -->
+                    <!-- Note: Browsers block unmuted autoplay. If audio doesn't start instantly, user clicks play/controls below. -->
+                    <video id="introVideo" loop playsinline class="w-full h-full object-cover opacity-100">
+                        <source src="intro.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Interactive Play Overlay Button -->
+                    <div id="videoOverlay" class="absolute inset-0 bg-gray-950/60 flex flex-col items-center justify-center cursor-pointer transition hover:bg-gray-950/40 group z-30">
+                        <button class="w-14 h-14 bg-teal-500 rounded-full flex items-center justify-center text-gray-950 text-xl font-bold shadow-lg transition transform group-hover:scale-110">
+                            <i id="playIcon" class="fa-solid fa-play ml-1"></i>
+                        </button>
+                        <span class="text-xs text-teal-400 mt-2 font-medium uppercase tracking-wider">Click to Play with Audio</span>
+                    </div>
+
+                    <!-- Audio Status Indicator Badge -->
+                    <div class="absolute top-3 right-3 bg-gray-900/80 backdrop-blur border border-gray-700 px-2 py-1 rounded text-[10px] font-mono tracking-wider flex items-center gap-1.5 z-20">
+                        <i class="fa-solid fa-volume-high text-teal-400"></i> Audio Enabled
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="py-20 border-t border-gray-800 bg-gray-950/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Core Technical Toolkit [cite: 1, 2]</h2>
+            <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Core Technical Toolkit[cite: 2]</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- AI / ML -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-teal-500/30 transition">
                     <div class="text-teal-400 text-2xl mb-4"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="text-xl font-bold mb-3">AI & Machine Learning [cite: 2]</h3>
-                    <p class="text-xs text-gray-400 mb-4 font-mono">Generative AI, Deep Learning, NLP, Time Series, Scikit-Learn</p>
+                    <h3 class="text-xl font-bold mb-3">AI & Machine Learning[cite: 2]</h3>
+                    <p class="text-xs text-gray-400 mb-4 font-mono">Generative AI, Deep Learning, NLP, Time Series, Scikit-Learn[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Generative AI & Prompt Engineering</li>
-                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Model Evaluation & Feature Engineering</li>
-                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Recommender Systems & NLP</li>
+                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Generative AI & Prompt Engineering[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Model Evaluation & Feature Engineering[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-teal-500 text-xs mr-2"></i> Recommender Systems & NLP[cite: 2]</li>
                     </ul>
                 </div>
+                <!-- Cybersecurity -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-cyan-400/30 transition">
                     <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Cybersecurity [cite: 2]</h3>
-                    <p class="text-xs text-gray-400 mb-4 font-mono">NIST Framework, Threat Modeling, SIEM, Cryptography</p>
+                    <h3 class="text-xl font-bold mb-3">Cybersecurity[cite: 2]</h3>
+                    <p class="text-xs text-gray-400 mb-4 font-mono">NIST Framework, Threat Modeling, SIEM, Cryptography[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Cyber Threat Intelligence & IPS</li>
-                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Incident Response & Log Analysis</li>
-                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Network Security Protocols & OS Hardening</li>
+                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Cyber Threat Intelligence & IPS[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Incident Response & Log Analysis[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-cyan-400 text-xs mr-2"></i> Network Security Protocols & OS Hardening[cite: 2]</li>
                     </ul>
                 </div>
+                <!-- MLOps & Systems -->
                 <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-purple-500/30 transition">
                     <div class="text-purple-400 text-2xl mb-4"><i class="fa-solid fa-gears"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Data & MLOps Pipelines [cite: 2]</h3>
-                    <p class="text-xs text-gray-400 mb-4 font-mono">Python, SQL, Flask, Streamlit, CI/CD, Docker</p>
+                    <h3 class="text-xl font-bold mb-3">Data & MLOps Pipelines[cite: 2]</h3>
+                    <p class="text-xs text-gray-400 mb-4 font-mono">Python, SQL, Flask, Streamlit, CI/CD, Docker[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2">
-                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Streamlit & Flask App Infrastructure</li>
-                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Data Wrangling & Visualizations</li>
-                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Bash Scripting & Lifecycle Automation</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Streamlit & Flask App Infrastructure[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Data Wrangling & Visualizations[cite: 2]</li>
+                        <li><i class="fa-solid fa-circle-check text-purple-400 text-xs mr-2"></i> Bash Scripting & Lifecycle Automation[cite: 2]</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Professional Experience -->
     <section id="experience" class="py-20 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold tracking-tight text-center mb-12">Professional Experience</h2>
             <div class="relative border-l border-gray-800 pl-6 ml-4 space-y-12">
+                <!-- Timeline Marker -->
                 <div class="relative">
                     <div class="absolute -left-10 top-1.5 bg-teal-500 w-7 h-7 rounded-full flex items-center justify-center border-4 border-gray-900">
                         <i class="fa-solid fa-briefcase text-[10px] text-gray-900"></i>
@@ -104,42 +138,45 @@
                         <h3 class="text-lg font-bold text-gray-100">AI/ML Intern</h3>
                         <span class="text-xs font-mono text-gray-400 px-2 py-1 bg-gray-800 rounded">Oct 2025 - Apr 2026</span>
                     </div>
-                    <p class="text-sm text-teal-400 font-medium mb-3">Labmentix</p>
+                    <p class="text-sm text-teal-400 font-medium mb-3">Labmentix[cite: 2]</p>
                     <ul class="text-sm text-gray-400 space-y-2 list-disc list-inside">
-                        <li>Engineered and deployed production AI analytics applications targeting challenges in FinTech and E-commerce landscapes.</li>
-                        <li>Developed time-series architectures (LSTM) alongside robust clustering models to predict market trends and optimize strategy.</li>
-                        <li>Automated local and cloud model environments via customized MLOps CI/CD configurations, drastically driving down operational deployment overhead.</li>
+                        <li>Engineered and deployed real-world AI analytics solutions across FinTech, E-commerce, and Real Estate sectors[cite: 2].</li>
+                        <li>Developed intelligent predictive models utilizing LSTM, K-Means clustering, and sentiment analysis to optimize stakeholder strategies[cite: 2].</li>
+                        <li>Automated local and cloud model environments via customized MLOps CI/CD configurations, drastically driving down operational deployment overhead[cite: 2].</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Key Technical Projects -->
     <section id="projects" class="py-20 border-t border-gray-800 bg-gray-950/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold tracking-tight text-center mb-4">Key Projects</h2>
             <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto text-sm">A selection of my core engineering work spanning defensive security engineering and scalable artificial intelligence.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Voyage Analytics MLOps -->
                 <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-start">
-                            <h3 class="text-xl font-bold text-gray-100">Voyage Analytics MLOps</h3>
+                            <h3 class="text-xl font-bold text-gray-100">Voyage Analytics MLOps[cite: 2]</h3>
                             <a href="https://github.com/Sudharsan-3086" target="_blank" class="text-gray-400 hover:text-teal-400 text-lg"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <p class="text-sm text-gray-400 leading-relaxed">
-                            An end-to-end recommendation pipeline converting volatile travel data into predictive value. Automates retraining routines to maintain high-accuracy, personalized destination recommendations. Successfully reduced manual operational overhead by 40%.
+                            An end-to-end recommendation pipeline converting volatile travel data into predictive value[cite: 2]. Automates retraining routines to maintain high-accuracy, personalized destination recommendations, successfully reducing manual operational overhead by 40%[cite: 2].
                         </p>
                         <div class="flex flex-wrap gap-1.5 pt-2">
                             <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Python</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Streamlit</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">MLflow</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Docker</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Kubernetes</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Streamlit[cite: 2]</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">MLflow[cite: 2]</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Docker[cite: 2]</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Kubernetes[cite: 2]</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- CyberShield AI -->
                 <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-start">
@@ -159,37 +196,39 @@
                     </div>
                 </div>
 
+                <!-- FinTech Fraud Detection -->
                 <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-start">
-                            <h3 class="text-xl font-bold text-gray-100">FinTech Fraud Detection & Analysis</h3>
+                            <h3 class="text-xl font-bold text-gray-100">FinTech Fraud Detection & Analysis[cite: 2]</h3>
                             <a href="https://github.com/Sudharsan-3086" target="_blank" class="text-gray-400 hover:text-teal-400 text-lg"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <p class="text-sm text-gray-400 leading-relaxed">
-                            Engineered robust anomaly frameworks processing extensive production financial feeds to detect irregular transactional patterns. Streamlined identification protocols while successfully driving down false positive constraints.
+                            Engineered robust anomaly frameworks processing extensive production financial feeds to detect irregular transactional patterns[cite: 2]. Streamlined identification protocols while successfully driving down false positive constraints[cite: 2].
                         </p>
                         <div class="flex flex-wrap gap-1.5 pt-2">
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Python</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Python[cite: 2]</span>
                             <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Anomaly Detection</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">SQL</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">SQL[cite: 2]</span>
                             <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Data Analytics</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Enterprise Vulnerability Assessment -->
                 <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between">
                     <div class="p-6 space-y-4">
                         <div class="flex justify-between items-start">
-                            <h3 class="text-xl font-bold text-gray-100">Vulnerability Assessment Architecture</h3>
+                            <h3 class="text-xl font-bold text-gray-100">Vulnerability Assessment Architecture[cite: 2]</h3>
                             <a href="https://github.com/Sudharsan-3086" target="_blank" class="text-gray-400 hover:text-cyan-400 text-lg"><i class="fa-brands fa-github"></i></a>
                         </div>
                         <p class="text-sm text-gray-400 leading-relaxed">
-                            Conducted end-to-end vulnerability assessment cycles within mock enterprise Linux & MySQL infrastructure surfaces following NIST SP 800-30 blueprints. Designed and documented technical RBAC and MFA policies.
+                            Conducted end-to-end vulnerability assessment cycles within mock enterprise Linux & MySQL infrastructure surfaces following NIST SP 800-30 blueprints[cite: 2]. Designed and documented technical RBAC and MFA policies[cite: 2].
                         </p>
                         <div class="flex flex-wrap gap-1.5 pt-2">
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">NIST SP 800-30</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">NIST SP 800-30[cite: 2]</span>
                             <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Linux Audit</span>
-                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">RBAC / MFA</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">RBAC / MFA[cite: 2]</span>
                             <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono text-gray-300">Risk Assessment</span>
                         </div>
                     </div>
@@ -198,34 +237,37 @@
         </div>
     </section>
 
+    <!-- Certifications & Education -->
     <section id="certifications" class="py-20 border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Education -->
                 <div>
                     <h2 class="text-2xl font-bold mb-6 text-gray-100"><i class="fa-solid fa-graduation-cap text-teal-400 mr-2"></i> Education</h2>
                     <div class="bg-gray-900 p-6 rounded-xl border border-gray-800 space-y-2">
                         <div class="flex justify-between items-start">
-                            <h4 class="font-bold text-gray-200">B.Tech in Artificial Intelligence & Machine Learning</h4>
-                            <span class="text-xs font-mono text-teal-400">CGPA: 8.64</span>
+                            <h4 class="font-bold text-gray-200">B.Tech in Artificial Intelligence & Machine Learning[cite: 2]</h4>
+                            <span class="text-xs font-mono text-teal-400">CGPA: 8.64[cite: 2]</span>
                         </div>
-                        <p class="text-sm text-gray-400">Panimalar Engineering College</p>
-                        <p class="text-xs text-gray-500 font-mono">Expected Graduation: May 2028</p>
+                        <p class="text-sm text-gray-400">Panimalar Engineering College[cite: 2]</p>
+                        <p class="text-xs text-gray-500 font-mono">Expected Graduation: May 2028[cite: 2]</p>
                     </div>
                 </div>
+                <!-- Credentials -->
                 <div>
                     <h2 class="text-2xl font-bold mb-6 text-gray-100"><i class="fa-solid fa-certificate text-cyan-400 mr-2"></i> Verified Credentials</h2>
                     <div class="space-y-4">
                         <div class="bg-gray-900 p-4 rounded-xl border border-gray-800 flex items-center justify-between">
                             <div>
-                                <h4 class="text-sm font-bold text-gray-200">Google AI Professional Certificate</h4>
-                                <p class="text-xs text-gray-500">Generative AI Apps, LLMs, and Prompt Engineering</p>
+                                <h4 class="text-sm font-bold text-gray-200">Google AI Professional Certificate[cite: 2]</h4>
+                                <p class="text-xs text-gray-500">Generative AI Apps, LLMs, and Prompt Engineering[cite: 2]</p>
                             </div>
                             <span class="text-teal-400 text-lg"><i class="fa-brands fa-google"></i></span>
                         </div>
                         <div class="bg-gray-900 p-4 rounded-xl border border-gray-800 flex items-center justify-between">
                             <div>
-                                <h4 class="text-sm font-bold text-gray-200">Google Cybersecurity Professional Certificate</h4>
-                                <p class="text-xs text-gray-500">NIST, SIEM tools (Splunk/Chronicle), Threat Modeling</p>
+                                <h4 class="text-sm font-bold text-gray-200">Google Cybersecurity Professional Certificate[cite: 2]</h4>
+                                <p class="text-xs text-gray-500">NIST, SIEM tools (Splunk/Chronicle), Threat Modeling[cite: 2]</p>
                             </div>
                             <span class="text-cyan-400 text-lg"><i class="fa-brands fa-google"></i></span>
                         </div>
@@ -235,9 +277,29 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-950 py-8 border-t border-gray-800 text-center text-xs text-gray-500">
         <p>&copy; 2026 Sudharsan Ravi. Built with Tailwind CSS. Hosted via GitHub Pages.</p>
     </footer>
+
+    <!-- Audio Interaction Script -->
+    <script>
+        const video = document.getElementById('introVideo');
+        const overlay = document.getElementById('videoOverlay');
+        const playIcon = document.getElementById('playIcon');
+
+        overlay.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        video.addEventListener('click', () => {
+            video.pause();
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    </script>
 
 </body>
 </html>
