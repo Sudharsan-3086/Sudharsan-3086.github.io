@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sudharsan Ravi | AI/ML & Cybersecurity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f7;--surface:#fff;--ink:#12202b;--muted:#5a6b78;--line:#d8dee3;--accent:#0e6f8c;--warm:#b36f0f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a22;--surface:#162530;--ink:#e8eef2;--muted:#9fb0bc;--line:#26394a;--accent:#4cc3e3;--warm:#e8a84a}}
+:root[data-theme="dark"]{--bg:#0f1a22;--surface:#162530;--ink:#e8eef2;--muted:#9fb0bc;--line:#26394a;--accent:#4cc3e3;--warm:#e8a84a}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;text-decoration:none}
+nav{display:flex;gap:18px;font-size:14px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--accent)}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,36px);font-weight:700;margin-bottom:28px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-top:64px}
+.hero h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:56ch;color:var(--muted);font-size:18px;margin:20px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 20px;border-radius:8px;border:1px solid var(--line);text-decoration:none;font-weight:500;background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.graph{width:100%;height:auto;color:var(--accent)}
+.graph .e{stroke:var(--line);stroke-width:2;fill:none}
+.graph .n{fill:var(--surface);stroke:currentColor;stroke-width:2.5}
+.graph .hot{fill:var(--warm);stroke:var(--warm)}
+.graph text{fill:var(--muted);font:12px "IBM Plex Sans",sans-serif}
+.graph .flow{stroke:var(--warm);stroke-width:2.5;fill:none;stroke-dasharray:6 8;animation:d 1.6s linear infinite}
+@keyframes d{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion:reduce){.graph .flow{animation:none}}
+.lead{max-width:65ch;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;margin:28px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.stat b{display:block;font:800 34px "Bricolage Grotesque",sans-serif;color:var(--accent)}
+.stat span{font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:12.5px;padding:2px 9px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.job{display:grid;grid-template-columns:170px 1fr;gap:24px}
+.job .when{color:var(--muted);font-size:14px}
+.job ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:6px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+.skills h3{font-size:17px;margin-bottom:8px;color:var(--accent)}
+.skills p{margin:0;color:var(--muted);font-size:15px}
+.cert{display:flex;flex-direction:column;gap:10px}
+.cert .ph{aspect-ratio:4/3;border:1.5px dashed var(--line);border-radius:8px;display:grid;place-items:center;font-size:13px;color:var(--muted);text-align:center;padding:10px}
+.cert img{width:100%;border-radius:8px}
+footer{padding:40px 0;color:var(--muted);font-size:14px}
+.contact a.big{font:700 clamp(22px,4vw,34px) "Bricolage Grotesque",sans-serif;color:var(--accent);text-decoration:none;word-break:break-all}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}}
+.portrait{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:4/5;width:100%;max-width:380px;justify-self:center}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%;opacity:.45}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:bottom}
+.cert a.shot{display:block;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.cert a.shot img{display:block;width:100%;height:auto}
+.cert .meta{font-size:13px;color:var(--muted);margin:0}
+.cert .ver{font-size:14px;color:var(--accent)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">Sudharsan Ravi</a>
+<nav aria-label="Sections"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#certs">Certificates</a><a href="#contact">Contact</a></nav></div></header>
+
+<main id="top">
+<section class="wrap hero" style="border:0">
+<div>
+<h1>I build machine learning systems and defend them.</h1>
+<p>B.Tech student in AI and Machine Learning at Panimalar Engineering College, Chennai. I work across ML, MLOps and cybersecurity, from fraud detection and recommendation pipelines to causal intrusion prevention research.</p>
+<div class="btns">
+<a class="btn primary" href="mailto:sudharsan3086@gmail.com">Email me</a>
+<a class="btn" href="https://github.com/Sudharsan-3086" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/sudharsan-ravi-0130382b6/" target="_blank" rel="noopener">LinkedIn</a>
+</div></div>
+<div class="portrait"><svg class="graph" viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<path class="e" d="M60 70 L160 40 M60 70 L130 150 M160 40 L260 80 M130 150 L260 80 M130 150 L90 240 M260 80 L300 190 M90 240 L210 250 M300 190 L210 250"/>
+<path class="flow" d="M60 70 L130 150 L260 80"/>
+<circle class="n" cx="60" cy="70" r="14"/><circle class="n" cx="160" cy="40" r="14"/><circle class="n" cx="130" cy="150" r="14"/>
+<circle class="n hot" cx="260" cy="80" r="14"/><circle class="n" cx="90" cy="240" r="14"/><circle class="n" cx="300" cy="190" r="14"/><circle class="n" cx="210" cy="250" r="14"/>
+<text x="30" y="102">traffic</text><text x="228" y="56">alert</text><text x="150" y="190">cause</text>
+</svg><img src="images/profile.png" alt="Portrait of Sudharsan Ravi"></div>
+</section>
+
+<section id="research"><div class="wrap">
+<h2>Research</h2>
+<h3 style="font-size:22px;max-width:30ch">Structural-causal counterfactual recourse for real-time intrusion prevention in SDNs (C3-IPS)</h3>
+<p class="lead">Lead author, manuscript in preparation with Sriram D, Rahul P and Sujay Prasanna S. I built a structural causal model of network telemetry (17 variables, 21 edges) and a constrained counterfactual engine that compiles its recourse into OpenFlow FlowMod and MeterMod rules.</p>
+<div class="stats">
+<div class="stat"><b>98.1%</b><span>counterfactual validity on NF-UQ-NIDS-v2 (best baseline 91.2%)</span></div>
+<div class="stat"><b>96.9%</b><span>causal consistency (best baseline 64.2%)</span></div>
+<div class="stat"><b>3.4%</b><span>benign packet loss in Mininet/Ryu (28.9% for SHAP-guided rules)</span></div>
+<div class="stat"><b>14.6 ms</b><span>mean recourse latency</span></div>
+</div>
+<div class="tags"><span>Causal inference</span><span>Counterfactuals</span><span>SDN</span><span>OpenFlow</span><span>Mininet</span><span>Ryu</span></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card"><h3>Voyage Analytics and Recommendation Engine</h3><p>A personalised travel recommendation engine with an end-to-end MLOps pipeline. Automating training through deployment cut manual operational effort by 40%.</p><div class="tags"><span>Python</span><span>Streamlit</span><span>MLflow</span><span>Docker</span><span>Kubernetes</span></div></div>
+<div class="card"><h3>CyberShield AI</h3><p>Network anomaly and threat tracking that passes traffic captures through machine learning and flags malicious activity with Isolation Forests.</p><div class="tags"><span>Flask</span><span>Scikit-learn</span><span>Scapy</span><span>JWT</span><span>Chart.js</span></div></div>
+<div class="card"><h3>CausalShield</h3><p>A hackathon project built with a team of four: an agent-based approach to improving the resilience of smart-factory cyber-physical systems.</p><div class="tags"><span>Agents</span><span>Cyber-physical systems</span><span>Hackathon</span></div></div>
+<div class="card"><h3>FinTech Fraud Detection and Analysis</h3><p>Anomaly detection on large financial datasets (PhonePe, Paisabazar) to flag irregular transactions, improving fraud identification and reducing false positives.</p><div class="tags"><span>Python</span><span>SQL</span><span>Anomaly detection</span></div></div>
+<div class="card"><h3>Vulnerability Assessment and Risk Management</h3><p>Assessed vulnerabilities in a Linux and MySQL environment, quantified risk with NIST SP 800-30 and documented controls including MFA and RBAC.</p><div class="tags"><span>NIST SP 800-30</span><span>Linux</span><span>MySQL</span><span>RBAC</span><span>MFA</span></div></div>
+<div class="card"><h3>Security Log Analysis and Threat Detection</h3><p>SQL queries that filter large log datasets to find anomalous logins and out-of-hours access.</p><div class="tags"><span>SQL</span><span>Log analysis</span><span>Monitoring</span></div></div>
+</div>
+<p style="margin-top:22px"><a href="https://github.com/Sudharsan-3086" target="_blank" rel="noopener">See all repositories on GitHub</a></p>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<div class="job"><div class="when">Oct 2025 to Apr 2026</div>
+<div><h3 style="font-size:20px">AI/ML Intern, Labmentix</h3>
+<ul>
+<li>Built and deployed AI analytics solutions for FinTech, E-commerce and Real Estate use cases.</li>
+<li>Developed predictive models with LSTM networks, K-Means clustering and sentiment analysis to forecast trends.</li>
+<li>Integrated automated CI/CD pipelines for model deployment, reducing manual work and improving reproducibility.</li>
+</ul></div></div>
+<div class="job" style="margin-top:32px"><div class="when">Expected May 2028</div>
+<div><h3 style="font-size:20px">B.Tech, Artificial Intelligence and Machine Learning</h3>
+<ul style="list-style:none;padding:0"><li>Panimalar Engineering College, Chennai. CGPA 8.64 / 10.</li></ul></div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Programming</h3><p>Python, SQL, Bash, Flask, Streamlit</p></div>
+<div><h3>Machine learning</h3><p>TensorFlow, Keras, Scikit-learn, NLP (NLTK, spaCy), LLMs, time-series forecasting, causal modelling</p></div>
+<div><h3>Engineering</h3><p>CI/CD pipelines, model deployment, MLOps, Linux administration, Git</p></div>
+<div><h3>Security and systems</h3><p>Threat modelling, intrusion detection (Suricata), SIEM (Chronicle, Splunk), TCP/IP, DNS, SSL/TLS</p></div>
+</div></div></section>
+
+<section id="certs"><div class="wrap"><h2>Certificates</h2><div class="grid"><div class="card cert"><a class="shot" href="images/certs/google-ai.jpg" target="_blank" rel="noopener"><img loading="lazy" src="images/certs/google-ai.jpg" alt="Google AI Professional Certificate certificate"></a><h3 style="font-size:18px">Google AI Professional Certificate</h3><p class="meta">Google via Coursera, Jun 2026</p><p>Seven courses: AI fundamentals, research, writing, data analysis and app building.</p><a class="ver" href="https://coursera.org/verify/professional-cert/R0A8OK712KRW" target="_blank" rel="noopener">Verify on Coursera</a></div><div class="card cert"><a class="shot" href="images/certs/google-cybersecurity.jpg" target="_blank" rel="noopener"><img loading="lazy" src="images/certs/google-cybersecurity.jpg" alt="Google Cybersecurity Professional Certificate certificate"></a><h3 style="font-size:18px">Google Cybersecurity Professional Certificate</h3><p class="meta">Google via Coursera, Mar 2026</p><p>Nine courses: Linux and SQL, SIEM tools, intrusion detection, risk management, Python automation.</p><a class="ver" href="https://coursera.org/verify/professional-cert/N9DQPZVE1U4W" target="_blank" rel="noopener">Verify on Coursera</a></div><div class="card cert"><a class="shot" href="images/certs/ibm-computer-networks-network-security.jpg" target="_blank" rel="noopener"><img loading="lazy" src="images/certs/ibm-computer-networks-network-security.jpg" alt="Computer Networks and Network Security certificate"></a><h3 style="font-size:18px">Computer Networks and Network Security</h3><p class="meta">IBM via Coursera, Jul 2026</p><p>Network fundamentals and the security of networked systems.</p><a class="ver" href="https://coursera.org/verify/ASG89TD37X3I" target="_blank" rel="noopener">Verify on Coursera</a></div><div class="card cert"><a class="shot" href="images/certs/ibm-genai-growth-marketing.jpg" target="_blank" rel="noopener"><img loading="lazy" src="images/certs/ibm-genai-growth-marketing.jpg" alt="Generative AI for Growth Marketing certificate"></a><h3 style="font-size:18px">Generative AI for Growth Marketing</h3><p class="meta">IBM and Starweaver via Coursera, Aug 2026</p><p>Three-course specialization: generative AI basics, prompt engineering and AI-driven strategy.</p><a class="ver" href="https://coursera.org/verify/specialization/5ZQA1ASQOPZD" target="_blank" rel="noopener">Verify on Coursera</a></div></div></div></section>
+
+<section id="contact" class="contact" style="border:0"><div class="wrap">
+<h2>Get in touch</h2>
+<p class="lead">Open to internships, research collaborations and project work.</p>
+<a class="big" href="mailto:sudharsan3086@gmail.com">sudharsan3086@gmail.com</a>
+</div></section>
+</main>
+<footer><div class="wrap">&copy; 2026 Sudharsan Ravi, Chennai, India</div></footer>
+</body>
+</html>
